@@ -4,9 +4,7 @@
  * Module dependencies.
  */
 
-import app from "./app";
-import debugPkg from "debug";
-const debug = debugPkg("express:server");
+import app from "./src/app";
 import http from "http";
 
 /**
@@ -81,5 +79,5 @@ function onError(error: any) {
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr?.port;
-  debug("Listening on " + bind);
+  console.log("Listening on " + bind);
 }
