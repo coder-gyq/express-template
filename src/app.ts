@@ -5,13 +5,13 @@ import cookieParser from "cookie-parser";
 import winston from "winston";
 import expressWinston from "express-winston";
 import "reflect-metadata";
-import { dataSource } from "./data-source";
+import { mysql } from "./dataSource";
 
 import indexRouter from "./controller/index";
 import usersRouter from "./controller/users";
 
 /** 初始化数据库 */
-dataSource
+mysql
   .initialize()
   .then(() => {
     console.log("Data Source has been initialized!");
